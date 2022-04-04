@@ -6,25 +6,25 @@ const app = express();
 
 const PORT = 8080;
 
-// app.use(cors())
+app.use(cors())
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
-    'Access-Control-Allow-Methods',
-    'GET, POST, PUT, DELETE, PATCH'
-  );
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'Content-Type'
-  );
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   res.setHeader(
+//     'Access-Control-Allow-Methods',
+//     'GET'
+//   );
+//   res.setHeader(
+//     'Access-Control-Allow-Headers',
+//     'Content-Type'
+//   );
 
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(204);
-  } else {
-    next();
-  }
-});
+//   if (req.method === 'OPTIONS') {
+//     return res.sendStatus(204);
+//   } else {
+//     next();
+//   }
+// });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -40,5 +40,5 @@ app.get('/api/colors', async(req, res) => { // Get all colors from DB
 });
 
 app.listen(PORT, () => {
-  console.log(`Server listening at localhost:${PORT}!`);
+  console.log(`Server listening at port:${PORT}!`);
 });
