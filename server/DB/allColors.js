@@ -7,7 +7,7 @@ const Color = db.define('colors', {
     primaryKey: true,
     autoIncrement: true,
   },
-  mainColor: {
+  name: {
     type: Sequelize.STRING,
     allowNull: false,
   },
