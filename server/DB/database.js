@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize'); // Import Sequelize
+const Sequelize = require('sequelize'); 
 
 const database = new Sequelize('color', 'postgres', 'monkey', {
   host: 'localhost',
