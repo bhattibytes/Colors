@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;300;400&display=swap');
+
+html,
+body {
+  font-family: 'Source Serif Pro', serif;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: 'Source Serif Pro', serif;
+  box-shadow: inset 0 0 10px #000000;
+}
