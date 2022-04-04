@@ -10,7 +10,7 @@ const Sidebar = () => {
   const [pageView, setPageView] = useState('list'); // List or Image View
 
   useEffect(() => { // Fetch Colors 
-    fetch('http://'+process.env.NEXT_PUBLIC_serverhost + '/api/colors') // fetch the data from the database
+    fetch('https://'+process.env.NEXT_PUBLIC_serverhost + '/api/colors') // fetch the data from the database
       .then(res => res.json()) 
       .then(data => { 
         const colorData = data[0]; // set to array of colors
