@@ -99,6 +99,7 @@
 
 .listViewContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   overflow: scroll;
   margin-left: 40px;
