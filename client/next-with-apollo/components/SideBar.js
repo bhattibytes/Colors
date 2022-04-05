@@ -10,17 +10,7 @@ const Sidebar = () => {
   const [pageView, setPageView] = useState('list'); // List or Image View
 
   useEffect(() => { // Fetch Colors 
-    if (process.env.NODE_ENV === 'development') {
-    fetch('http://localhost:8080/api/colors')
-    .then(res => res.json()) 
-      .then(data => { 
-        const colorData = data[0]; // set to array of colors
-        setColors(colorData)
-        setSelectedColors(colorData.slice(0, 18)) // set the selectedcolor to one color initially (Red)
-      })
-      .catch(err => console.log(err));
-    } else {
-    fetch('http://'+ process.env.NEXT_PUBLIC_serverhost + '/api/colors', {
+    fetch('/api/colors', {
       mode: 'cors',
     }) // fetch the data from the database
       .then(res => res.json()) 
@@ -30,9 +20,8 @@ const Sidebar = () => {
         setSelectedColors(colorData.slice(0, 18)) // set the selectedcolor to one color initially (Red)
       })
       .catch(err => console.log(err));
-    }
   }, []);
-
+  
   const handleClick = (clickedColor) => { 
     setSelectedSwatch('');
 
