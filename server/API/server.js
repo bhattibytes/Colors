@@ -5,8 +5,6 @@ const Color = require('../DB/database');
 var https = require('https');
 var fs = require('fs');
 
-
-
 const app = express();
 
 const PORT = 8080;
