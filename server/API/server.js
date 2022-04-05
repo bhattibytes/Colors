@@ -1,6 +1,11 @@
 const express = require('express');
+require('dotenv').config();
 const cors = require('cors')
 const Color = require('../DB/database');
+var https = require('https');
+var fs = require('fs');
+
+
 
 const app = express();
 
@@ -21,6 +26,15 @@ app.get('/api/colors', async(req, res) => { // Get all colors from DB
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening at port:${PORT}!`);
-});
+if (process.env.NODE_ENV === "production") {
+  var https_options = {
+    key: fs.readFileSync(process.env.sslKey),
+    cert: fs.readFileSync(process.env.sslCert),
+
+  }; 
+  https.createServer(https_options, app).listen(443);
+} else {
+  app.listen(PORT, () => {
+    console.log(`Server listening at port:${PORT}!`);
+  });
+}

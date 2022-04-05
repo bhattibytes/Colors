@@ -27,7 +27,7 @@ const ListView = ({ colors, handleClickedSwatch }) => {
       <h3 onClick={() => setPageNumber(2)}>2</h3>
       <h3 onClick={() => setPageNumber(3)}>3</h3>
       <h3 onClick={() => setPageNumber(4)}>4</h3>
-      <h3 onClick={() => setPageNumber(3)}>3</h3>
+      <h3 onClick={() => setPageNumber(5)}>5</h3>
       <h3 onClick={() => setPageNumber(6)}>6</h3>
       <h3 onClick={() => setPageNumber(7)}>7</h3>
       <h3 onClick={() => setPageNumber(8)}>8</h3>

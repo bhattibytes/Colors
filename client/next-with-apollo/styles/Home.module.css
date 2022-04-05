@@ -116,6 +116,7 @@
   justify-content: space-between;
   width: 1100px;
   overflow: scroll;
+  cursor: pointer;
 }
 
 .swatchImg {

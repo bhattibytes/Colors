@@ -20,7 +20,7 @@ const Sidebar = () => {
       })
       .catch(err => console.log(err));
     } else {
-    fetch('https://cors-anywhere.herokuapp.com/http://'+process.env.NEXT_PUBLIC_serverhost + '/api/colors') // fetch the data from the database
+    fetch('https://cors-anywhere.herokuapp.com/http://'+ process.env.NEXT_PUBLIC_serverhost + '/api/colors') // fetch the data from the database
       .then(res => res.json()) 
       .then(data => { 
         const colorData = data[0]; // set to array of colors
@@ -33,6 +33,10 @@ const Sidebar = () => {
 
   const handleClick = (clickedColor) => { 
     setSelectedSwatch('');
+
+    if (pageView === 'list') {
+      setPageView('main');
+    }
     const colorsArr = [];
 
     colors.map(color => {
@@ -45,6 +49,7 @@ const Sidebar = () => {
 
   const handleClickRandom = () => {
     setSelectedSwatch('');
+    
     if (pageView === 'list') {
       setPageView('main');
     }
@@ -63,8 +68,6 @@ const Sidebar = () => {
   }
 
   const handleClickedSwatch = (clickedSwatch) => {
-    console.log('clickedSwatch ', clickedSwatch);
-    console.log('selectedColors ', selectedColors);
     const selectColorsArray = [];
     colors.map(color => {
       if (color.name === clickedSwatch.name) {
